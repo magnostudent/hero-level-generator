@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #ff6347;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Heróis</h1>
+        <p id="hero"></p>
+        <button onclick="gerarHeroi()">Gerar novo herói</button>
+    </div>
+    <script>
+        function gerarNomeHeroi() {
+            var nomes = ["Superman", "Batman", "Mulher Maravilha", "Homem Aranha", "Capitão América"];
+            var indice = Math.floor(Math.random() * nomes.length);
+            return nomes[indice];
+        }
+
+        function gerarXP() {
+            return Math.floor(Math.random() * 11000);
+        }
+
+        function classificarNivel(xp) {
+            if (xp < 1000) return "Ferro";
+            if (xp <= 2000) return "Bronze";
+            if (xp <= 5000) return "Prata";
+            if (xp <= 7000) return "Ouro";
+            if (xp <= 8000) return "Platina";
+            if (xp <= 9000) return "Ascendente";
+            if (xp <= 10000) return "Imortal";
+            return "Radiante";
+        }
+
+        function gerarHeroi() {
+            var nome = gerarNomeHeroi();
+            var xp = gerarXP();
+            var nivel = classificarNivel(xp);
+
+            document.getElementById('hero').innerHTML = `O Herói de nome <span class="highlight">${nome}</span> está no nível de <span class="highlight">${nivel}</span> com <span class="highlight">${xp}</span> XP`;
+        }
+
+        // Gerar um herói quando a página carrega
+        gerarHeroi();
+    </script>
+</body>
+</html>
