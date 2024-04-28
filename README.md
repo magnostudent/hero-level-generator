@@ -1,4 +1,5 @@
-# Gerador de Nível de Herói - Desafio DIO
+# Projeto Acadêmico 
+## Gerador de Nível de Herói - Desafio DIO
 
 Este projeto é um gerador de nível de herói baseado em experiência (XP). Ele foi criado como parte de um desafio de projeto da **Digital Innovation One (DIO)**.
 
